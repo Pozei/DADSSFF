@@ -5,6 +5,4 @@ Domain Alignment Dynamic Spectral and Spatial Feature Fusion for Hyperspectral C
   author={Qin, Xuexiang and Zhang, Yuxiang and Dong, Yanni},
   journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
   year={2024},
-  publisher={IEEE}
-}
-
+  publisher={IEEE}}
