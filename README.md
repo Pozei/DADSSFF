@@ -16,15 +16,7 @@ Change detection is an important task in geospatial analysis that aims to identi
 1. **Domain Alignment**: The mean and correlation of bitemporal HSIs are used to alleviate the issue of inconsistent feature distribution across bitemporal HSIs.
 2. **KLD-Enhanced Attention**: The attention mechanism and KLD are used to help mine deep spectral and spatial features, thereby improving the ability of the network to extract these features in bitemporal HSIs.
 3. **Dynamic Feature Fusion**: The cosine similarity is utilized to dynamically quantify the importance of spectral and spatial features, evaluate their respective weights, and facilitate better fusion of the three features.
-   
 ---
-
-## 🏗️ Network Architecture
-
-DADSSFF consists of **one main network** and **two auxiliary branches**:
-<p align="center">
-  <img src="Flowchart.png" alt="Flowchart" width="90%">
-</p>
 
 ## 📁 Repository Structure
 
