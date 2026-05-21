@@ -143,8 +143,8 @@ If you find this work useful for your research, please cite our paper:
 ---
 
 ## 🙏 Acknowledgements
-The attention modules (CAM/PAM) are based on [DANet](https://github.com/junfu1115/DANet/) by Fu et al. (CVPR 2019). The CORAL loss implementation is referenced from [DeepCORAL](https://github.com/jindongwang/transferlearning/tree/master/code/DeepDA) by Sun & Saenko (ECCV 2016).
-
+1. The attention modules (CAM/PAM) are based on [DANet](https://github.com/junfu1115/DANet/) by Fu et al. (CVPR 2019). 
+2. The CORAL loss implementation is referenced from [DeepCORAL](https://github.com/jindongwang/transferlearning/tree/master/code/DeepDA) by Sun & Saenko (ECCV 2016).
 ---
 
 
