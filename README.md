@@ -13,44 +13,18 @@ Official PyTorch implementation of **DADSSFF**, a novel hyperspectral change det
 
 Change detection is an important task in geospatial analysis that aims to identify noticeable variations in geographic elements between images captured at different periods. However, existing methods often overlook the distribution discrepancies across images caused by changes in imaging time. Meanwhile, the spectral and spatial features of hyperspectral images still have great potential for further development in extracting and detecting changes. To mitigate these challenges, we propose DADSSFF for hyperspectral change detection. Key innovations include:
 
-1. **Domain Alignment**: Aligns the mean (first-order statistics) and correlation (second-order statistics) of bitemporal images to alleviate inconsistent feature distributions.
-2. **KLD-Enhanced Attention**: Employs Kullback-Leibler divergence to increase interaction between auxiliary networks (spectral & spatial attention branches) and the main network.
-3. **Dynamic Feature Fusion**: Uses cosine similarity to adaptively measure the importance of spectral and spatial features.
-
+1. **Domain Alignment**: The mean and correlation of bitemporal HSIs are used to alleviate the issue of inconsistent feature distribution across bitemporal HSIs.
+2. **KLD-Enhanced Attention**: The attention mechanism and KLD are used to help mine deep spectral and spatial features, thereby improving the ability of the network to extract these features in bitemporal HSIs.
+3. **Dynamic Feature Fusion**: The cosine similarity is utilized to dynamically quantify the importance of spectral and spatial features, evaluate their respective weights, and facilitate better fusion of the three features.
+   
 ---
 
 ## 🏗️ Network Architecture
 
 DADSSFF consists of **one main network** and **two auxiliary branches**:
-
-```
-                    ┌─────────────────────────┐
-  T1 ──────────────►│                         │
-                    │   Siamese CNN (Shared)  │──► T1_fea, T2_fea
-  T2 ──────────────►│                         │
-                    └─────────────────────────┘
-                              │
-         ┌────────────────────┼────────────────────┐
-         ▼                    ▼                    ▼
-   Domain Alignment    Difference Feature    Concatenated Feature
-   (Mean + CORAL)      │                     │
-         │              ▼                     ▼
-   loss_DA        Channel Attention     Position Attention
-                    (CAM)                 (PAM)
-                       │                     │
-                       ▼                     ▼
-                  loss_fea_img          loss_con_fea
-                  (KL Divergence)       (KL Divergence)
-                       │                     │
-                       └──────┬──────────────┘
-                              │
-                              ▼
-                    Cosine Similarity →
-                    Dynamic Weighted Fusion
-                              │
-                              ▼
-                          Classifier
-```
+<p align="center">
+  <img src="Flowchart.png" alt="Flowchart" width="90%">
+</p>
 
 ## 📁 Repository Structure
 
@@ -148,7 +122,7 @@ Total_Loss = CrossEntropyLoss + λ₁ · Loss_DA + λ₂ · Loss_KLD
 DADSSFF was evaluated on three public hyperspectral change detection datasets and compared against state-of-the-art methods including CVA, DPCA, SFA, IR-MAD, GETNET, SiamCRNN, ML-EDAN, D²AGCN, SSA-SiamNet, HyperNet, MSDFFN, HyGSTAN, etc.
 
 | Dataset | F1 | Kappa | OA | Precision | Recall |
-|---------|--------|---------|--------|---------|--------|---------|
+|---------|--------|---------|--------|---------|--------|
 | **China** | 96.41% | 0.9495 | 97.92 | 0.9650 | 0.9633 |
 | **River** | 83.74% | 0.8218 | 97.12 | 0.8282 | 0.8468 |
 | **USA**   | 93.83% | 0.9203 | 97.21 | 0.9354 | 0.9412 |
