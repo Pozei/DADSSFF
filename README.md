@@ -115,9 +115,9 @@ DADSSFF was evaluated on three public hyperspectral change detection datasets an
 
 | Dataset | F1 | Kappa | OA | Precision | Recall |
 |---------|--------|---------|--------|---------|--------|
-| **China** | 96.41% | 0.9495 | 97.92 | 0.9650 | 0.9633 |
-| **River** | 83.74% | 0.8218 | 97.12 | 0.8282 | 0.8468 |
-| **USA**   | 93.83% | 0.9203 | 97.21 | 0.9354 | 0.9412 |
+| **China** | 96.41% | 0.9495 | 97.92% | 0.9650 | 0.9633 |
+| **River** | 83.74% | 0.8218 | 97.14% | 0.8282 | 0.8468 |
+| **USA**   | 93.83% | 0.9203 | 97.21% | 0.9354 | 0.9412 |
 
 DADSSFF achieves **optimal results on F1, OA, and Kappa** across all three datasets, demonstrating superior change detection capability with significantly reduced pseudo-change recognition compared to conventional and deep learning methods.
 
